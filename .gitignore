@@ -1,0 +1,12 @@
+# Local build tooling — not part of the static site
+node_modules/
+package.json
+package-lock.json
+
+# Generation scratch (raw stills/dives/connectors/audio sources)
+build/
+
+# Vercel / OS / logs
+.vercel/
+.DS_Store
+*.log
