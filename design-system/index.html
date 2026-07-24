@@ -9,6 +9,19 @@
 </head>
 <body>
 
+<!-- =========================================================== APP BAR -->
+<nav class="case-top">
+  <div class="container-xl case-top__row">
+    <a class="case-brand" href="/"><i></i> ORIKA COFFEE</a>
+    <div class="case-links">
+      <a href="/">Experiência</a>
+      <a href="/story/">Brand Story</a>
+      <a href="/case/">Case Técnico</a>
+      <a href="/design-system/" class="on">Design System</a>
+    </div>
+  </div>
+</nav>
+
 <!-- ============================================================ HEADER -->
 <header class="ds-header">
   <div class="ds-header__inner">
@@ -447,6 +460,20 @@
         <a class="nav__link" href="#">The Bar</a>
       </div>
     </div>
+    <h3 class="ds-sub">App bar (páginas de estudo)</h3>
+    <p style="color:var(--clr-ink-soft);max-width:66ch;margin-bottom:var(--space-20)">Barra fixa que conecta as páginas de estudo de caso — marca à esquerda, links à direita, item ativo em cobre. É a barra que você vê no topo desta página.</p>
+    <div class="card card--flat" style="padding:0;overflow:hidden">
+      <nav class="case-top" style="position:relative">
+        <div class="container-xl case-top__row">
+          <a class="case-brand" href="#"><i></i> ORIKA COFFEE</a>
+          <div class="case-links">
+            <a href="#">Experiência</a><a href="#">Brand Story</a><a href="#">Case Técnico</a><a href="#" class="on">Design System</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="ds-note"><strong>Escopo:</strong> a app bar é usada apenas em <code>/story/</code>, <code>/case/</code> e <code>/design-system/</code>. Na experiência principal ela <strong>não</strong> aparece — lá a navegação é o trilho de rota do próprio motor de scroll, para não competir com a imersão.</div>
+
     <h3 class="ds-sub">Trilho de rota</h3>
     <div class="card" style="display:flex;justify-content:flex-end">
       <div class="rail">
@@ -653,6 +680,21 @@
     <p style="margin-top:8px">Identidade origami/washi · 16 seções · 7 telas de produto</p>
   </div>
 </footer>
+
+<script>
+  /* Mede a app bar e alimenta --appbar-h, para o índice grudar exatamente
+     abaixo dela (a barra quebra em 2 linhas em telas estreitas). */
+  (function () {
+    var bar = document.querySelector('.case-top');
+    if (!bar) return;
+    var set = function () {
+      document.documentElement.style.setProperty('--appbar-h', bar.offsetHeight + 'px');
+    };
+    set();
+    addEventListener('resize', set);
+    addEventListener('orientationchange', set);
+  })();
+</script>
 
 </body>
 </html>

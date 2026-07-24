@@ -201,6 +201,35 @@ code, pre { font-family: var(--font-mono); font-size: 13px; }
   background: rgba(251,248,241,0.7);
 }
 
+/* -------------------------------------------------------------- APP BAR --- */
+/* Barra de navegação entre as páginas do estudo de caso (/story/, /case/,
+   /design-system/). NÃO é usada na experiência principal — lá a navegação
+   é o trilho de rota do próprio motor de scroll. */
+.case-top {
+  position: sticky; top: 0; z-index: 60;
+  background: rgba(242,236,221,.90);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  border-bottom: var(--border-hair);
+}
+.case-top__row {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-16);
+  padding: var(--space-12) 0; flex-wrap: wrap;
+}
+.case-brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-size: 16px; letter-spacing: var(--ls-wide);
+  color: var(--clr-sumi); text-decoration: none;
+}
+.case-brand i { width: 20px; height: 20px; border-radius: var(--radius-xs); background: var(--clr-matcha); display: block; }
+.case-links { display: flex; gap: 6px; flex-wrap: wrap; }
+.case-links a {
+  text-decoration: none; font-size: var(--text-caption); font-weight: 600;
+  color: var(--clr-sumi-soft); padding: 7px 13px; border-radius: var(--radius-pill);
+  transition: background var(--duration-fast) var(--ease-drift), color var(--duration-fast) var(--ease-drift);
+}
+.case-links a:hover { background: var(--clr-copper-subtle); color: var(--clr-umber); }
+.case-links a.on { background: var(--clr-copper); color: #fff; }
+
 /* ------------------------------------------------------------------ NAV --- */
 .ds-toc {
   position: sticky; top: 0; z-index: 50;
@@ -216,6 +245,10 @@ code, pre { font-family: var(--font-mono); font-size: 13px; }
   transition: background var(--duration-fast) var(--ease-drift), color var(--duration-fast) var(--ease-drift);
 }
 .ds-toc a:hover { background: var(--clr-copper-subtle); color: var(--clr-umber); }
+/* Quando a app bar está presente, o índice gruda logo ABAIXO dela.
+   --appbar-h é medida em runtime (a barra quebra em 2 linhas no mobile,
+   então um valor fixo sobrepõe). Fallback cobre o caso sem JS. */
+.case-top ~ .ds-toc { top: var(--appbar-h, 61px); }
 
 /* -------------------------------------------------------------- SECTION --- */
 .ds-section { padding: var(--space-96) 0; border-bottom: var(--border-hair); }

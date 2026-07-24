@@ -3,31 +3,9 @@
    Construídas sobre os tokens do Design System (/design-system/styles.css).
    ========================================================================== */
 
-/* ------------------------------------------------------------ TOP LINKS -- */
-.case-top {
-  position: sticky; top: 0; z-index: 60;
-  background: rgba(242,236,221,.90);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-  border-bottom: var(--border-hair);
-}
-.case-top__row {
-  display: flex; align-items: center; justify-content: space-between; gap: var(--space-16);
-  padding: var(--space-12) 0; flex-wrap: wrap;
-}
-.case-brand {
-  display: flex; align-items: center; gap: 10px;
-  font-family: var(--font-display); font-size: 16px; letter-spacing: var(--ls-wide);
-  color: var(--clr-sumi); text-decoration: none;
-}
-.case-brand i { width: 20px; height: 20px; border-radius: var(--radius-xs); background: var(--clr-matcha); display: block; }
-.case-links { display: flex; gap: 6px; flex-wrap: wrap; }
-.case-links a {
-  text-decoration: none; font-size: var(--text-caption); font-weight: 600;
-  color: var(--clr-sumi-soft); padding: 7px 13px; border-radius: var(--radius-pill);
-  transition: background var(--duration-fast) var(--ease-drift), color var(--duration-fast) var(--ease-drift);
-}
-.case-links a:hover { background: var(--clr-copper-subtle); color: var(--clr-umber); }
-.case-links a.on { background: var(--clr-copper); color: #fff; }
+/* NOTA: a app bar (.case-top / .case-brand / .case-links) agora é um componente
+   do Design System e vive em /design-system/styles.css — carregado antes deste
+   arquivo em /story/ e /case/. Não redeclarar aqui. */
 
 /* ----------------------------------------------------------------- HERO -- */
 .case-hero {
