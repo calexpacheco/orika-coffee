@@ -35,7 +35,7 @@
       sections: [
         {
           id: 'plantation', label: 'Plantation',
-          still: 'assets/plantation.jpg', clip: 'assets/vid/plantation.mp4',
+          still: 'assets/plantation.jpg?v=veo1', clip: 'assets/vid/plantation.mp4?v=veo1',
           accent: '#5C6B4C', scroll: 1.7, linger: 0.4,
           eyebrow: 'From the hills',
           title: 'It begins on a folded hillside.',
@@ -44,7 +44,7 @@
         },
         {
           id: 'harvest', label: 'Harvest',
-          still: 'assets/harvest.jpg', clip: 'assets/vid/harvest.mp4',
+          still: 'assets/harvest.jpg?v=veo1', clip: 'assets/vid/harvest.mp4?v=veo1',
           accent: '#6B4226',
           eyebrow: 'Harvest & dry',
           title: 'Sun-dried, raked by hand.',
@@ -53,7 +53,7 @@
         },
         {
           id: 'selection', label: 'Selection',
-          still: 'assets/selection.jpg', clip: 'assets/vid/selection.mp4',
+          still: 'assets/selection.jpg?v=veo1', clip: 'assets/vid/selection.mp4?v=veo1',
           accent: '#B87333',
           eyebrow: 'Grain selection',
           title: 'Only the finest beans pass.',
@@ -62,7 +62,7 @@
         },
         {
           id: 'roasting', label: 'Roasting',
-          still: 'assets/roasting.jpg', clip: 'assets/vid/roasting.mp4',
+          still: 'assets/roasting.jpg?v=veo1', clip: 'assets/vid/roasting.mp4?v=veo1',
           accent: '#B87333',
           eyebrow: 'The roast',
           title: 'Roasted to the first crack.',
@@ -71,7 +71,7 @@
         },
         {
           id: 'boutique', label: 'Boutique',
-          still: 'assets/boutique.jpg', clip: 'assets/vid/boutique.mp4',
+          still: 'assets/boutique.jpg?v=veo1', clip: 'assets/vid/boutique.mp4?v=veo1',
           accent: '#BC002D',
           eyebrow: 'The boutique',
           title: 'A small shop in Tokyo.',
@@ -80,7 +80,7 @@
         },
         {
           id: 'delivery', label: 'Delivery',
-          still: 'assets/delivery.jpg', clip: 'assets/vid/delivery.mp4',
+          still: 'assets/delivery.jpg?v=veo1', clip: 'assets/vid/delivery.mp4?v=veo1',
           accent: '#5C6B4C',
           eyebrow: 'To your door',
           title: 'It unfolds at your door.',
@@ -89,7 +89,7 @@
         },
         {
           id: 'bar', label: 'The Bar',
-          still: 'assets/bar.jpg', clip: 'assets/vid/bar.mp4',
+          still: 'assets/bar.jpg?v=veo1', clip: 'assets/vid/bar.mp4?v=veo1',
           accent: '#BC002D', scroll: 1.9, linger: 0.5,
           eyebrow: 'The last cup',
           title: 'Unfold the cup.',
@@ -100,28 +100,28 @@
         },
       ],
       connectors: [
-        'assets/vid/conn1.mp4',
-        'assets/vid/conn2.mp4',
-        'assets/vid/conn3.mp4',
-        'assets/vid/conn4.mp4',
-        'assets/vid/conn5.mp4',
-        'assets/vid/conn6.mp4',
+        'assets/vid/conn1.mp4?v=veo1',
+        'assets/vid/conn2.mp4?v=veo1',
+        'assets/vid/conn3.mp4?v=veo1',
+        'assets/vid/conn4.mp4?v=veo1',
+        'assets/vid/conn5.mp4?v=veo1',
+        'assets/vid/conn6.mp4?v=veo1',
       ],
     });
 
     // Ambient audio: continuous music bed + per-scene soundscape (crossfades with the
     // active section). Muted until the visitor clicks the speaker toggle (autoplay policy).
     mountAudioLayer({
-      bed: 'assets/audio/bed.mp3',
+      bed: 'assets/audio/bed.mp3?v=veo1',
       bedVolume: 0.11, sceneVolume: 0.72,
       scenes: [
-        { id: 'plantation', src: 'assets/audio/plantation.mp3' },
-        { id: 'harvest',    src: 'assets/audio/harvest.mp3' },
-        { id: 'selection',  src: 'assets/audio/selection.mp3' },
-        { id: 'roasting',   src: 'assets/audio/roasting.mp3' },
-        { id: 'boutique',   src: 'assets/audio/boutique.mp3' },
-        { id: 'delivery',   src: 'assets/audio/delivery.mp3' },
-        { id: 'bar',        src: 'assets/audio/bar.mp3' },
+        { id: 'plantation', src: 'assets/audio/plantation.mp3?v=veo1' },
+        { id: 'harvest',    src: 'assets/audio/harvest.mp3?v=veo1' },
+        { id: 'selection',  src: 'assets/audio/selection.mp3?v=veo1' },
+        { id: 'roasting',   src: 'assets/audio/roasting.mp3?v=veo1' },
+        { id: 'boutique',   src: 'assets/audio/boutique.mp3?v=veo1' },
+        { id: 'delivery',   src: 'assets/audio/delivery.mp3?v=veo1' },
+        { id: 'bar',        src: 'assets/audio/bar.mp3?v=veo1' },
       ],
     });
   </script>
