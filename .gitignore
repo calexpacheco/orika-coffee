@@ -10,3 +10,7 @@ build/
 .vercel/
 .DS_Store
 *.log
+.vercel
+
+# Render manual Veo (material de trabalho local)
+veo/

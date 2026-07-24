@@ -31,7 +31,7 @@
       nav: true,
       atmosphere: true,
       diveScroll: 1.35,
-      connScroll: 0.9,
+      connScroll: 1.2,
       sections: [
         {
           id: 'plantation', label: 'Plantation',
@@ -125,5 +125,17 @@
       ],
     });
   </script>
+
+  <a class="sw-verlink" href="/draft" title="Ver a versão de rascunho (Higgsfield 480p)">versão draft 480p&nbsp;↗</a>
+  <style>
+    .sw-verlink{position:fixed;left:20px;bottom:calc(62px + env(safe-area-inset-bottom));z-index:60;
+      font:600 11.5px/1 -apple-system,BlinkMacSystemFont,system-ui,sans-serif;letter-spacing:.03em;
+      text-decoration:none;color:#6B4226;background:color-mix(in srgb,#F2ECDD 82%,transparent);
+      -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:7px 12px;border-radius:999px;
+      border:1px solid color-mix(in srgb,#6B4226 20%,transparent);box-shadow:0 4px 14px rgba(43,43,40,.10);
+      transition:transform .15s ease,background .2s ease;}
+    .sw-verlink:hover{transform:translateY(-1px);background:color-mix(in srgb,#F2ECDD 95%,transparent);}
+    @media (max-width:860px){ .sw-verlink{bottom:calc(64px + env(safe-area-inset-bottom));} }
+  </style>
 </body>
 </html>

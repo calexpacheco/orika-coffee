@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ORIKA COFFEE — unfold the cup</title>
+  <meta name="description" content="Scroll to fly through the paper world of ORIKA COFFEE — from a folded hillside to the last cup." />
+  <style>
+    /* Washi-cream theme — matches the scene background so posters sit seamlessly. */
+    :root, .sw-root {
+      --sw-bg: #F2ECDD;          /* washi cream == scene background */
+      --sw-ink: #2B2B28;         /* charcoal sumi */
+      --sw-ink-soft: #6B4226;    /* roasted umber, softened for secondary text */
+      --sw-accent: #B87333;      /* kissaten copper — per-section accents override */
+      --sw-font-display: 'Hiragino Mincho ProN', 'Yu Mincho', Georgia, 'Times New Roman', serif;
+      --sw-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    html, body { margin: 0; background: var(--sw-bg); }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+  <div id="world"></div>
+
+  <script src="scrub-engine.js"></script>
+  <script src="audio-layer.js"></script>
+  <script>
+    mountScrollWorld(document.getElementById('world'), {
+      brand: { name: 'ORIKA COFFEE', href: '#top' },
+      hint: 'scroll to unfold the cup',
+      nav: true,
+      atmosphere: true,
+      diveScroll: 1.35,
+      connScroll: 0.9,
+      sections: [
+        {
+          id: 'plantation', label: 'Plantation',
+          still: 'assets/plantation.jpg', clip: 'assets/vid/plantation.mp4',
+          accent: '#5C6B4C', scroll: 1.7, linger: 0.4,
+          eyebrow: 'From the hills',
+          title: 'It begins on a folded hillside.',
+          body: 'Single-origin cherries, grown on terraced slopes and picked by hand.',
+          tags: ['Single-origin', 'Hand-picked'],
+        },
+        {
+          id: 'harvest', label: 'Harvest',
+          still: 'assets/harvest.jpg', clip: 'assets/vid/harvest.mp4',
+          accent: '#6B4226',
+          eyebrow: 'Harvest & dry',
+          title: 'Sun-dried, raked by hand.',
+          body: 'Every cherry laid out and turned like a garden, until it is ready.',
+          tags: ['Sun-dried', 'Small-batch'],
+        },
+        {
+          id: 'selection', label: 'Selection',
+          still: 'assets/selection.jpg', clip: 'assets/vid/selection.mp4',
+          accent: '#B87333',
+          eyebrow: 'Grain selection',
+          title: 'Only the finest beans pass.',
+          body: 'Each bean weighed under the loupe; the rest slide quietly away.',
+          tags: ['Hand-sorted', 'Graded'],
+        },
+        {
+          id: 'roasting', label: 'Roasting',
+          still: 'assets/roasting.jpg', clip: 'assets/vid/roasting.mp4',
+          accent: '#B87333',
+          eyebrow: 'The roast',
+          title: 'Roasted to the first crack.',
+          body: 'A copper drum, careful heat, a profile tuned bean by bean.',
+          tags: ['Copper-drum', 'Fresh-roasted'],
+        },
+        {
+          id: 'boutique', label: 'Boutique',
+          still: 'assets/boutique.jpg', clip: 'assets/vid/boutique.mp4',
+          accent: '#BC002D',
+          eyebrow: 'The boutique',
+          title: 'A small shop in Tokyo.',
+          body: 'Weighed to order behind the noren, folded into a crane-marked bag.',
+          tags: ['Weighed to order', 'Tokyo'],
+        },
+        {
+          id: 'delivery', label: 'Delivery',
+          still: 'assets/delivery.jpg', clip: 'assets/vid/delivery.mp4',
+          accent: '#5C6B4C',
+          eyebrow: 'To your door',
+          title: 'It unfolds at your door.',
+          body: 'Carried by hand across the city, still fragrant when it arrives.',
+          tags: ['City delivery', 'Fresh daily'],
+        },
+        {
+          id: 'bar', label: 'The Bar',
+          still: 'assets/bar.jpg', clip: 'assets/vid/bar.mp4',
+          accent: '#BC002D', scroll: 1.9, linger: 0.5,
+          eyebrow: 'The last cup',
+          title: 'Unfold the cup.',
+          body: 'A slow pour-over, blooming open like paper. This is ORIKA.',
+          tags: [],
+          cta: { primary: { label: 'Find your roast', href: '#top' },
+                 secondary: { label: 'Visit the bar', href: '#top' } },
+        },
+      ],
+      connectors: [
+        'assets/vid/conn1.mp4',
+        'assets/vid/conn2.mp4',
+        'assets/vid/conn3.mp4',
+        'assets/vid/conn4.mp4',
+        'assets/vid/conn5.mp4',
+        'assets/vid/conn6.mp4',
+      ],
+    });
+
+    // Ambient audio: continuous music bed + per-scene soundscape (crossfades with the
+    // active section). Muted until the visitor clicks the speaker toggle (autoplay policy).
+    mountAudioLayer({
+      bed: 'assets/audio/bed.mp3',
+      bedVolume: 0.11, sceneVolume: 0.72,
+      scenes: [
+        { id: 'plantation', src: 'assets/audio/plantation.mp3' },
+        { id: 'harvest',    src: 'assets/audio/harvest.mp3' },
+        { id: 'selection',  src: 'assets/audio/selection.mp3' },
+        { id: 'roasting',   src: 'assets/audio/roasting.mp3' },
+        { id: 'boutique',   src: 'assets/audio/boutique.mp3' },
+        { id: 'delivery',   src: 'assets/audio/delivery.mp3' },
+        { id: 'bar',        src: 'assets/audio/bar.mp3' },
+      ],
+    });
+  </script>
+
+  <span class="sw-draftbadge">draft · 480p</span>
+  <a class="sw-verlink" href="/" title="Ver a versão final (Veo 3.1)">★ versão final Veo 3.1&nbsp;↗</a>
+  <style>
+    .sw-verlink{position:fixed;left:20px;bottom:calc(62px + env(safe-area-inset-bottom));z-index:60;
+      font:600 11.5px/1 -apple-system,BlinkMacSystemFont,system-ui,sans-serif;letter-spacing:.03em;
+      text-decoration:none;color:#fff;background:#B87333;
+      -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:7px 12px;border-radius:999px;
+      border:1px solid transparent;box-shadow:0 4px 14px rgba(43,43,40,.14);
+      transition:transform .15s ease,filter .2s ease;}
+    .sw-verlink:hover{transform:translateY(-1px);filter:brightness(1.06);}
+    .sw-draftbadge{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:60;
+      font:700 10.5px/1 -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;
+      color:#6B4226;background:color-mix(in srgb,#F2ECDD 80%,transparent);
+      -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:6px 11px;border-radius:999px;
+      border:1px solid color-mix(in srgb,#6B4226 22%,transparent);}
+    @media (max-width:860px){ .sw-verlink{bottom:calc(64px + env(safe-area-inset-bottom));} .sw-draftbadge{display:none;} }
+  </style>
+</body>
+</html>
