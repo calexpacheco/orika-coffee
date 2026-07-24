@@ -124,6 +124,24 @@
         { id: 'bar',        src: 'assets/audio/bar.mp3?v=veo1' },
       ],
     });
+
+    /* Link para a Brand Story no fim da nav do motor. Anexado por fora — usa uma
+       classe própria (NÃO .sw-nav__item) para não entrar na contagem de seções
+       ativas que o motor faz por índice. */
+    (function () {
+      var nav = document.querySelector('.sw-nav');
+      if (!nav) return;
+      var sep = document.createElement('span');
+      sep.className = 'sw-navsep';
+      var a = document.createElement('a');
+      a.className = 'sw-storylink';
+      a.href = '/story/';
+      a.textContent = '物語';
+      a.title = 'Brand Story — a história da ORIKA';
+      a.setAttribute('aria-label', 'Brand Story');
+      nav.appendChild(sep);
+      nav.appendChild(a);
+    })();
   </script>
 
   <a class="sw-verlink" href="/draft/" title="Ver a versão de rascunho (Higgsfield 480p)">versão draft 480p&nbsp;↗</a>
@@ -136,6 +154,18 @@
       transition:transform .15s ease,background .2s ease;}
     .sw-verlink:hover{transform:translateY(-1px);background:color-mix(in srgb,#F2ECDD 95%,transparent);}
     @media (max-width:860px){ .sw-verlink{bottom:calc(64px + env(safe-area-inset-bottom));} }
+
+    /* Separador + link 物語 (Brand Story) no fim da nav */
+    .sw-navsep{width:1px;align-self:stretch;margin:4px 3px;
+      background:color-mix(in srgb,#6B4226 20%,transparent);}
+    .sw-storylink{display:inline-flex;align-items:center;justify-content:center;
+      font-family:'Hiragino Mincho ProN','Yu Mincho',Georgia,serif;
+      font-size:1rem;line-height:1;letter-spacing:.06em;
+      color:#B87333;text-decoration:none;padding:6px 13px;border-radius:999px;
+      transition:background .25s ease,color .25s ease,transform .2s ease;}
+    .sw-storylink:hover{background:color-mix(in srgb,#B87333 15%,transparent);
+      color:#8A5A38;transform:translateY(-1px);}
+    .sw-storylink:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(184,115,51,.45);}
   </style>
 </body>
 </html>
