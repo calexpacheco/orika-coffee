@@ -1,6 +1,6 @@
 # ORIKA COFFEE — Brand Story
 
-**Página visual:** `/story/` → https://orika-coffee.vercel.app/story/
+**Página visual:** `/pt/story/` → https://orika-coffee.vercel.app/pt/story/
 **Experiência:** https://orika-coffee.vercel.app
 
 ---

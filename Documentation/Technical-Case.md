@@ -1,6 +1,6 @@
 # ORIKA COFFEE — Technical Case
 
-**Página visual:** `/case/` → https://orika-coffee.vercel.app/case/
+**Página visual:** `/pt/case/` → https://orika-coffee.vercel.app/pt/case/
 **Experiência:** https://orika-coffee.vercel.app
 **Rascunho (v1):** https://orika-coffee.vercel.app/draft
 **Design System:** https://orika-coffee.vercel.app/design-system/
@@ -128,7 +128,7 @@ Como o vídeo toca **mudo** (é "scrubado", não reproduzido), qualquer áudio e
 | `/` | Experiência final (Veo 3.1) |
 | `/draft` | Versão de rascunho (480p) |
 | `/design-system/` | Design System |
-| `/story/` · `/case/` | Páginas de estudo de caso |
+| `/pt/story/` · `/pt/case/` | Páginas de estudo de caso |
 
 GitHub conectado à Vercel: push em `main` re-publica sozinho.
 
@@ -140,7 +140,7 @@ GitHub conectado à Vercel: push em `main` re-publica sozinho.
 
 **Colisão de cache com nomes iguais.** A v2 reaproveitou os nomes de arquivo da v1. Navegadores que já tinham visitado o site serviam os vídeos antigos do cache na rota nova. Solução: versionar as URLs dos assets (`?v=veo1`).
 
-**Caminho relativo com barra final.** Com o link apontando para `/draft` (sem barra), o navegador resolve `assets/…` a partir da **raiz** — a subpágina carregava os arquivos da página principal e as duas pareciam idênticas. Solução: **caminhos absolutos** em toda subpasta. Regra aplicada preventivamente em `/design-system/`, `/story/` e `/case/`.
+**Caminho relativo com barra final.** Com o link apontando para `/draft` (sem barra), o navegador resolve `assets/…` a partir da **raiz** — a subpágina carregava os arquivos da página principal e as duas pareciam idênticas. Solução: **caminhos absolutos** em toda subpasta. Regra aplicada preventivamente em `/design-system/`, `/pt/story/` e `/pt/case/`.
 
 **Transições entre cenas muito diferentes.** Os dois últimos conectores partiam de um interior fechado ou de um close no nível da rua e tinham que chegar a uma vista aérea. Prompt genérico falhava. Duas soluções: (a) descrever o movimento **em etapas explícitas** ("primeiro recua e sai pela frente da loja, depois sobe, depois desce"); (b) no trecho final, abraçar a metáfora — a cena **se desmonta em dobras**, flutua e **se remonta**, o que é ao mesmo tempo mais fiel à marca e mais fácil para o modelo interpolar.
 

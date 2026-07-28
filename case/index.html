@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ORIKA COFFEE — Case Técnico</title>
-<meta name="description" content="Como a ORIKA COFFEE foi construída: rolagem que dirige uma câmera, emendas travadas por quadro e um pipeline de vídeo por IA.">
+<title>ORIKA COFFEE — Technical Case</title>
+<meta name="description" content="How ORIKA COFFEE was built: scroll that drives a camera, frame-locked seams, and an AI video pipeline.">
 <link rel="stylesheet" href="/design-system/styles.css">
 <link rel="stylesheet" href="/case-pages.css">
 </head>
@@ -15,213 +15,213 @@
     <a class="case-brand" href="/"><i></i> ORIKA COFFEE</a>
     <div class="case-right">
       <div class="case-links">
-        <a href="/">Experiência</a>
+        <a href="/">Experience</a>
         <a href="/story/">Brand Story</a>
-        <a href="/case/" class="on">Case Técnico</a>
+        <a href="/case/" class="on">Technical Case</a>
         <a href="/design-system/">Design System</a>
       </div>
-      <div class="case-lang"><a href="/case/" class="on">PT</a><span>·</span><a href="/en/case/">EN</a></div>
+      <div class="case-lang"><a href="/pt/case/">PT</a><span>·</span><a href="/case/" class="on">EN</a></div>
     </div>
   </div>
 </nav>
 
 <header class="case-hero" style="background-image:url('/case/assets/aerial.jpg')">
   <div class="container case-hero__inner">
-    <span class="eyebrow">Case Técnico</span>
-    <h1>A rolagem não move a página. Move o <em>tempo</em>.</h1>
-    <p class="case-hero__lede">Sete cenários, treze clipes, uma câmera só — sem corte. Como um site estático de 300 linhas de JavaScript sustenta um voo contínuo por um mundo gerado por IA.</p>
+    <span class="eyebrow">Technical Case</span>
+    <h1>Scroll doesn't move the page. It moves <em>time</em>.</h1>
+    <p class="case-hero__lede">Seven scenes, thirteen clips, one camera — no cut. How a static site of 300 lines of JavaScript sustains a continuous flight through an AI-generated world.</p>
     <div class="case-meta"><span>Vanilla JS</span><span>Veo 3.1</span><span>ffmpeg</span><span>Vercel</span></div>
   </div>
 </header>
 
-<!-- PREMISSA -->
+<!-- PREMISE -->
 <section class="case-section">
   <div class="container">
     <div class="case-head">
-      <h2>O problema, e a premissa</h2>
-      <p>Contar a jornada de um café sem que o visitante sinta que está pulando entre seções. A navegação tinha que ser contínua: uma câmera só, atravessando sete cenários.</p>
+      <h2>The problem, and the premise</h2>
+      <p>Tell the journey of a coffee without the visitor feeling they're jumping between sections. The navigation had to be continuous: one camera, crossing seven scenes.</p>
     </div>
     <div class="prose">
-      <p>A solução não é animar a câmera no navegador. É <strong>pré-renderizar</strong> o voo e deixar a rolagem controlar em que instante dele você está. A câmera se moveu de verdade, na hora do render; o scroll apenas dirige o tempo.</p>
+      <p>The solution isn't to animate the camera in the browser. It's to <strong>pre-render</strong> the flight and let scroll control which instant of it you're in. The camera genuinely moved, at render time; scroll only drives the clock.</p>
     </div>
-    <pre class="code"><span class="c">// o mapeamento, em uma linha</span>
-scroll (px) → segmento ativo → <span class="k">video.currentTime</span> → quadro exibido
-                  <span class="c">↑ suavizado por requestAnimationFrame</span></pre>
-    <div class="prose"><p>É a mesma técnica das páginas de produto da Apple. Ela entrega um movimento de câmera que CSS ou WebGL não alcançariam com esse acabamento — e o custo em runtime é quase zero: o navegador só faz seek num vídeo.</p></div>
+    <pre class="code"><span class="c">// the mapping, in one line</span>
+scroll (px) → active segment → <span class="k">video.currentTime</span> → displayed frame
+                  <span class="c">↑ smoothed by requestAnimationFrame</span></pre>
+    <div class="prose"><p>It's the same technique behind Apple's product pages. It delivers a camera move that CSS or WebGL wouldn't reach with this finish — and the runtime cost is near zero: the browser just seeks a video.</p></div>
   </div>
 </section>
 
-<!-- ARQUITETURA -->
+<!-- ARCHITECTURE -->
 <section class="case-section">
   <div class="container">
     <div class="case-head">
-      <h2>Arquitetura: mergulhos e conectores</h2>
-      <p>Sete cenas, treze clipes, encadeados numa corrente única.</p>
+      <h2>Architecture: dives and connectors</h2>
+      <p>Seven scenes, thirteen clips, chained into a single strand.</p>
     </div>
     <div class="chain">
-      <b>mergulho 1</b><span>→</span><i>conector 1</i><span>→</span><b>mergulho 2</b><span>→</span><i>conector 2</i><span>→</span><span>…</span><span>→</span><i>conector 6</i><span>→</span><b>mergulho 7</b>
+      <b>dive 1</b><span>→</span><i>connector 1</i><span>→</span><b>dive 2</b><span>→</span><i>connector 2</i><span>→</span><span>…</span><span>→</span><i>connector 6</i><span>→</span><b>dive 7</b>
     </div>
     <div class="flow">
-      <div><strong>7 mergulhos · 8s</strong><p>Image-to-video. A câmera parte de fora da cena e voa para dentro, terminando no interior.</p></div>
-      <div><strong>6 conectores · 8s</strong><p>Frames-to-video. Sobe, cruza o mundo de papel e desce na cena seguinte.</p></div>
-      <div><strong>Por que essa forma</strong><p>Combina com a estética de miniatura. Num walkthrough realista, o recuo do conector leria como rebobinar.</p></div>
+      <div><strong>7 dives · 8s</strong><p>Image-to-video. The camera starts outside the scene and flies inward, ending in the interior.</p></div>
+      <div><strong>6 connectors · 8s</strong><p>Frames-to-video. It rises, crosses the paper world and descends into the next scene.</p></div>
+      <div><strong>Why this shape</strong><p>It fits the miniature aesthetic. In a realistic walkthrough, the connector's pull-back would read as rewinding.</p></div>
     </div>
   </div>
 </section>
 
-<!-- A EMENDA -->
+<!-- THE SEAM -->
 <section class="case-section">
   <div class="container">
     <div class="case-head">
-      <h2>O núcleo: emenda travada por quadro</h2>
-      <p>É o que faz a costura ser invisível — e o erro mais fácil de cometer.</p>
+      <h2>The core: frame-locked seams</h2>
+      <p>It's what makes the stitch invisible — and the easiest mistake to make.</p>
     </div>
     <div class="prose">
-      <p>Os quadros inicial e final de cada conector precisam ser os <strong>quadros realmente renderizados</strong> dos mergulhos vizinhos, extraídos do vídeo. Nunca a imagem original da cena.</p>
+      <p>A connector's first and last frames must be the <strong>actually rendered frames</strong> of the neighboring dives, extracted from the video. Never the original scene image.</p>
     </div>
 
     <div class="compare" style="margin:var(--space-32) 0">
-      <figure><span class="lbl">quadro inicial do conector</span><img src="/case/assets/seam-a.jpg" alt="Último quadro do mergulho da plantação"><figcaption>= ÚLTIMO quadro renderizado do mergulho 1</figcaption></figure>
-      <figure><span class="lbl">quadro final do conector</span><img src="/case/assets/seam-b.jpg" alt="Primeiro quadro do mergulho da colheita"><figcaption>= PRIMEIRO quadro renderizado do mergulho 2</figcaption></figure>
+      <figure><span class="lbl">connector's first frame</span><img src="/case/assets/seam-a.jpg" alt="Last frame of the plantation dive"><figcaption>= LAST rendered frame of dive 1</figcaption></figure>
+      <figure><span class="lbl">connector's last frame</span><img src="/case/assets/seam-b.jpg" alt="First frame of the harvest dive"><figcaption>= FIRST rendered frame of dive 2</figcaption></figure>
     </div>
 
-    <pre class="code"><span class="c"># extração dos quadros de emenda</span>
+    <pre class="code"><span class="c"># extracting the seam frames</span>
 ffmpeg <span class="k">-sseof -0.15</span> -i dive_i.mp4    -frames:v 1 -q:v 2 last_i.png
 ffmpeg <span class="k">-ss 0</span>        -i dive_next.mp4 -frames:v 1 -q:v 2 first_next.png
 
-<span class="c"># resultado: fim(dive_i) == início(conn_i) e fim(conn_i) == início(dive_i+1)</span></pre>
+<span class="c"># result: end(dive_i) == start(conn_i) and end(conn_i) == start(dive_i+1)</span></pre>
 
     <div class="prose">
-      <p><strong>Por que não usar a imagem original:</strong> cada geração renderiza um pouco diferente. Se o conector termina numa versão nova da cena e o mergulho seguinte começa na dele, as duas não batem — e aparece um "pulo" na troca. Um crossfade curto cobre diferenças mínimas, mas é seguro-extra, não substituto.</p>
+      <p><strong>Why not use the original image:</strong> every generation renders slightly differently. If the connector ends on a fresh version of the scene and the next dive starts on its own, the two won't match — and a "pop" appears at the seam. A short crossfade covers minimal differences, but it's a safety net, not a substitute.</p>
     </div>
   </div>
 </section>
 
-<!-- DUAS GERAÇÕES -->
+<!-- TWO GENERATIONS -->
 <section class="case-section">
   <div class="container">
     <div class="case-head">
-      <h2>Duas gerações do pipeline</h2>
-      <p>A v1 validou a jornada barato. A v2 trouxe o acabamento. As duas continuam no ar.</p>
+      <h2>Two generations of the pipeline</h2>
+      <p>v1 validated the journey cheaply. v2 brought the finish. Both are still live.</p>
     </div>
 
     <div class="compare" style="margin-bottom:var(--space-32)">
-      <figure><span class="lbl">v1 · rascunho 480p</span><img src="/case/assets/v1-mid.jpg" alt="Quadro do mergulho na versão rascunho"></figure>
-      <figure><span class="lbl v2">v2 · Veo 3.1</span><img src="/case/assets/v2-mid.jpg" alt="Quadro do mergulho na versão final"></figure>
+      <figure><span class="lbl">v1 · 480p draft</span><img src="/case/assets/v1-mid.jpg" alt="Dive frame in the draft version"></figure>
+      <figure><span class="lbl v2">v2 · Veo 3.1</span><img src="/case/assets/v2-mid.jpg" alt="Dive frame in the final version"></figure>
     </div>
-    <p style="font-size:var(--text-caption);color:var(--clr-ink-dim);margin-bottom:var(--space-32)">Mesmo instante do mesmo mergulho, nas duas gerações. A v1 segue viva em <a href="/draft">/draft</a> — não foi descartada, virou prova da evolução.</p>
+    <p style="font-size:var(--text-caption);color:var(--clr-ink-dim);margin-bottom:var(--space-32)">The same instant of the same dive, in both generations. v1 is still alive at <a href="/draft">/draft</a> — not discarded, it became proof of the evolution.</p>
 
     <div class="tablewrap">
       <table class="spec">
-        <tr><th></th><th>v1 — rascunho</th><th>v2 — final</th></tr>
-        <tr><td>Vídeo</td><td>Seedance 2.0 mini · 480p</td><td><strong>Veo 3.1</strong> (Frames to Video) · 720p</td></tr>
-        <tr><td>Cenas</td><td>GPT Image 2 · 2K</td><td>reaproveitadas da v1</td></tr>
-        <tr><td>Fluxo</td><td>API automatizada</td><td>híbrido: geração manual + orquestração automatizada</td></tr>
-        <tr><td>Custo</td><td>~135 créditos (~US$ 7–11)</td><td>assinatura</td></tr>
+        <tr><th></th><th>v1 — draft</th><th>v2 — final</th></tr>
+        <tr><td>Video</td><td>Seedance 2.0 mini · 480p</td><td><strong>Veo 3.1</strong> (Frames to Video) · 720p</td></tr>
+        <tr><td>Scenes</td><td>GPT Image 2 · 2K</td><td>reused from v1</td></tr>
+        <tr><td>Flow</td><td>automated API</td><td>hybrid: manual generation + automated orchestration</td></tr>
+        <tr><td>Cost</td><td>~135 credits (~US$ 7–11)</td><td>subscription</td></tr>
       </table>
     </div>
 
-    <div class="ds-note" style="margin-top:var(--space-24)"><strong>Por que o Veo 3.1:</strong> ele expõe condicionamento por quadro <em>inicial e final</em>. Sem esse recurso, conector com emenda travada é impossível — a escolha do modelo foi por capacidade, não por preferência.</div>
+    <div class="ds-note" style="margin-top:var(--space-24)"><strong>Why Veo 3.1:</strong> it exposes conditioning by <em>first and last</em> frame. Without that feature, a frame-locked connector is impossible — the model choice was by capability, not preference.</div>
   </div>
 </section>
 
-<!-- FLUXO HÍBRIDO -->
+<!-- HYBRID FLOW -->
 <section class="case-section">
   <div class="container">
     <div class="case-head">
-      <h2>O fluxo híbrido</h2>
-      <p>Geração cara feita à mão em ferramenta por assinatura; todo o resto automatizado. Entregas em rodadas.</p>
+      <h2>The hybrid flow</h2>
+      <p>Expensive generation done by hand in a subscription tool; everything else automated. Delivered in rounds.</p>
     </div>
     <div class="flow">
-      <div><strong>Rodada 1</strong><p>Prompts das 7 cenas → geração manual → pasta.</p></div>
-      <div><strong>Rodada 2</strong><p>Prompts dos 7 mergulhos, cada um partindo da sua cena.</p></div>
-      <div><strong>Automático</strong><p>Extração dos 12 quadros de emenda, pareados e nomeados.</p></div>
-      <div><strong>Rodada 3</strong><p>6 conectores, cada um com seu par de quadros.</p></div>
-      <div><strong>Automático</strong><p>Encode, montagem, QA e deploy.</p></div>
+      <div><strong>Round 1</strong><p>Prompts for the 7 scenes → manual generation → folder.</p></div>
+      <div><strong>Round 2</strong><p>Prompts for the 7 dives, each starting from its scene.</p></div>
+      <div><strong>Automated</strong><p>Extraction of the 12 seam frames, paired and named.</p></div>
+      <div><strong>Round 3</strong><p>6 connectors, each with its frame pair.</p></div>
+      <div><strong>Automated</strong><p>Encode, assembly, QA and deploy.</p></div>
     </div>
   </div>
 </section>
 
-<!-- REPRODUÇÃO -->
+<!-- PLAYBACK -->
 <section class="case-section">
   <div class="container">
     <div class="case-head">
-      <h2>Reprodução: o que costuma dar errado</h2>
-      <p>Rolar quadro a quadro exige <strong>seekability</strong>, não densidade de keyframes.</p>
+      <h2>Playback: what usually goes wrong</h2>
+      <p>Scrubbing frame by frame requires <strong>seekability</strong>, not keyframe density.</p>
     </div>
     <div class="prose">
       <h3>1 · Blob seeking</h3>
-      <p>Muitos hosts não servem HTTP range, o que prende <code>video.seekable</code> em <code>[0,0]</code> e trava todo seek no quadro 0 — o vídeo parece congelado. A solução: buscar cada clipe como <strong>Blob</strong> e tocar de um object URL em memória. Blob é sempre totalmente seekable, independente do host.</p>
-      <h3>2 · Não sacrificar qualidade por fluidez</h3>
-      <p>All-intra incha um clipe de 8s para ~25 MB. GOP curto resolve com cerca de um terço do peso.</p>
+      <p>Many hosts don't serve HTTP range, which pins <code>video.seekable</code> to <code>[0,0]</code> and clamps every seek to frame 0 — the video looks frozen. The fix: fetch each clip as a <strong>Blob</strong> and play it from an in-memory object URL. A blob is always fully seekable, regardless of host.</p>
+      <h3>2 · Don't trade quality for smoothness</h3>
+      <p>All-intra bloats an 8s clip to ~25 MB. A short GOP solves it at about a third of the weight.</p>
     </div>
     <pre class="code">ffmpeg -i src.mp4 -an -vf <span class="k">"crop=1152:648,unsharp=5:5:0.8:5:5:0.0"</span> \
   -c:v libx264 -preset slow <span class="k">-crf 20</span> -pix_fmt yuv420p \
   <span class="k">-g 8</span> -keyint_min 8 -sc_threshold 0 <span class="k">-movflags +faststart</span> out.mp4
 
-<span class="c"># o crop uniforme nos 13 clipes remove a marca d'água sem descentralizar</span></pre>
+<span class="c"># the uniform crop across the 13 clips removes the watermark without off-centering</span></pre>
   </div>
 </section>
 
-<!-- ÁUDIO -->
+<!-- AUDIO -->
 <section class="case-section">
   <div class="container">
     <div class="case-head">
-      <h2>A camada de áudio</h2>
-      <p>Como o vídeo toca <strong>mudo</strong> (é "scrubado", não reproduzido), qualquer áudio embutido no clipe seria inútil.</p>
+      <h2>The audio layer</h2>
+      <p>Since the video plays <strong>muted</strong> (it's scrubbed, not played back), any audio baked into the clip would be useless.</p>
     </div>
     <div class="flow">
-      <div><strong>Trilha contínua</strong><p>Uma faixa musical ao fundo, do início ao fim da jornada.</p></div>
-      <div><strong>Som por cena</strong><p>Sete ambientes em loop, com crossfade atrelado à seção ativa.</p></div>
-      <div><strong>Sem tocar no motor</strong><p>A cena ativa é detectada por MutationObserver na classe que o motor já alterna.</p></div>
-      <div><strong>Autoplay</strong><p>Inicia mudo; só toca após clique explícito do visitante.</p></div>
+      <div><strong>Continuous bed</strong><p>One music track in the background, start to finish of the journey.</p></div>
+      <div><strong>Per-scene sound</strong><p>Seven looping ambiences, crossfading with the active section.</p></div>
+      <div><strong>No engine changes</strong><p>The active scene is detected by a MutationObserver on the class the engine already toggles.</p></div>
+      <div><strong>Autoplay</strong><p>Starts muted; only plays after an explicit visitor click.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PROBLEMAS -->
+<!-- PROBLEMS -->
 <section class="case-section">
   <div class="container">
     <div class="case-head">
-      <h2>Problemas resolvidos</h2>
-      <p>O que realmente custou tempo — e a regra que ficou de cada um.</p>
+      <h2>Problems solved</h2>
+      <p>What actually cost time — and the rule that stuck from each one.</p>
     </div>
     <div class="tablewrap">
       <table class="spec">
-        <tr><th>Sintoma</th><th>Causa</th><th>Regra que ficou</th></tr>
-        <tr><td>Metade dos vídeos voltava rejeitada</td><td>Limite de concorrência <em>por tipo de job</em>: 4 para imagem, mas só <strong>2</strong> para vídeo</td><td>Cap por estágio + script idempotente que só gera o que falta</td></tr>
-        <tr><td>As duas versões pareciam idênticas</td><td>A v2 reaproveitou os nomes de arquivo da v1; o navegador servia o cache antigo</td><td>Versionar URLs de asset (<code>?v=veo1</code>) quando o conteúdo troca mantendo o nome</td></tr>
-        <tr><td>Subpágina carregava os arquivos da home</td><td>Link sem barra final: <code>/draft</code> resolve caminhos relativos a partir da <strong>raiz</strong></td><td><strong>Caminhos absolutos</strong> em toda subpasta</td></tr>
-        <tr><td>Transição virava "derretimento"</td><td>Salto grande demais entre um interior fechado e uma vista aérea</td><td>Descrever o movimento <strong>em etapas explícitas</strong> — ou abraçar a metáfora da marca</td></tr>
+        <tr><th>Symptom</th><th>Cause</th><th>Rule that stuck</th></tr>
+        <tr><td>Half the videos came back rejected</td><td>Concurrency limit <em>per job type</em>: 4 for image, but only <strong>2</strong> for video</td><td>Per-stage cap + idempotent script that only generates what's missing</td></tr>
+        <tr><td>The two versions looked identical</td><td>v2 reused v1's filenames; the browser served the old cache</td><td>Version asset URLs (<code>?v=veo1</code>) when content changes but the name stays</td></tr>
+        <tr><td>Subpage loaded the home's files</td><td>Link without trailing slash: <code>/draft</code> resolves relative paths from the <strong>root</strong></td><td><strong>Absolute paths</strong> in every subfolder</td></tr>
+        <tr><td>Transition turned into a "melt"</td><td>Too large a jump between an enclosed interior and an aerial view</td><td>Describe the move in <strong>explicit stages</strong> — or embrace the brand's metaphor</td></tr>
       </table>
     </div>
     <figure class="fig" style="margin-top:var(--space-32)">
-      <img src="/case/assets/fold.jpg" alt="A cena desmontada em peças de origami">
-      <figcaption>A solução mais elegante veio de reenquadrar o problema: em vez de forçar um voo rígido, a cena <strong>se desmonta em dobras</strong>, flutua e <strong>se remonta</strong>. Mais fiel à marca — e mais fácil para o modelo interpolar.</figcaption>
+      <img src="/case/assets/fold.jpg" alt="The scene disassembled into origami pieces">
+      <figcaption>The most elegant fix came from reframing the problem: instead of forcing a rigid flight, the scene <strong>disassembles into folds</strong>, floats, and <strong>reassembles</strong>. More faithful to the brand — and easier for the model to interpolate.</figcaption>
     </figure>
   </div>
 </section>
 
-<!-- NÚMEROS -->
+<!-- NUMBERS -->
 <section class="case-section">
   <div class="container">
-    <div class="case-head"><h2>Números</h2></div>
+    <div class="case-head"><h2>Numbers</h2></div>
     <div class="stats">
-      <div class="stat"><b>7</b><span>cenas</span></div>
-      <div class="stat"><b>13</b><span>clipes encadeados</span></div>
-      <div class="stat"><b>104s</b><span>de vídeo</span></div>
-      <div class="stat"><b>~18</b><span>alturas de tela</span></div>
-      <div class="stat"><b>8</b><span>faixas de áudio</span></div>
-      <div class="stat"><b>0</b><span>dependências no runtime</span></div>
+      <div class="stat"><b>7</b><span>scenes</span></div>
+      <div class="stat"><b>13</b><span>chained clips</span></div>
+      <div class="stat"><b>104s</b><span>of video</span></div>
+      <div class="stat"><b>~18</b><span>viewport-heights</span></div>
+      <div class="stat"><b>8</b><span>audio tracks</span></div>
+      <div class="stat"><b>0</b><span>runtime dependencies</span></div>
     </div>
-    <h3 class="ds-sub">Rotas publicadas</h3>
+    <h3 class="ds-sub">Published routes</h3>
     <div class="tablewrap">
       <table class="spec">
-        <tr><th>Rota</th><th>Conteúdo</th></tr>
-        <tr><td><code>/</code></td><td>Experiência final (Veo 3.1)</td></tr>
-        <tr><td><code>/draft</code></td><td>Versão de rascunho (480p)</td></tr>
+        <tr><th>Route</th><th>Content</th></tr>
+        <tr><td><code>/</code></td><td>Final experience (Veo 3.1)</td></tr>
+        <tr><td><code>/draft</code></td><td>Draft version (480p)</td></tr>
         <tr><td><code>/design-system/</code></td><td>Design System</td></tr>
-        <tr><td><code>/story/</code> · <code>/case/</code></td><td>Estudo de caso</td></tr>
+        <tr><td><code>/story/</code> · <code>/case/</code></td><td>Case study</td></tr>
       </table>
     </div>
   </div>
@@ -230,17 +230,17 @@ ffmpeg <span class="k">-ss 0</span>        -i dive_next.mp4 -frames:v 1 -q:v 2 f
 <section class="case-cta">
   <div class="container">
     <h2>Stack</h2>
-    <p>HTML · CSS · JavaScript vanilla (zero dependências no runtime) · ffmpeg · Veo 3.1 · geração de imagem por IA · GitHub · Vercel</p>
+    <p>HTML · CSS · vanilla JavaScript (zero runtime dependencies) · ffmpeg · Veo 3.1 · AI image generation · GitHub · Vercel</p>
     <div class="btn-row" style="justify-content:center">
-      <a class="btn-primary" href="/">Percorrer a experiência</a>
-      <a class="btn-outline" href="/story/">Ver a história da marca</a>
+      <a class="btn-primary" href="/">Walk through the experience</a>
+      <a class="btn-outline" href="/story/">See the brand story</a>
       <a class="btn-ghost" href="/design-system/">Design System <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
 
 <footer class="case-foot">
-  <div class="container"><p><strong>ORIKA COFFEE</strong> — Case Técnico · marca fictícia criada como estudo de caso</p></div>
+  <div class="container"><p><strong>ORIKA COFFEE</strong> — Technical Case · fictional brand created as a case study</p></div>
 </footer>
 
 </body>

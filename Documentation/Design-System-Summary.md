@@ -3,8 +3,8 @@
 **File:** `/design-system/index.html`
 **Styles:** `/design-system/styles.css`
 **Assets:** `/design-system/assets/` (as 7 imagens iniciais de cena)
-**Run:** `python3 -m http.server 8788` na **raiz do projeto** → `http://localhost:8788/design-system/`
-**Live:** `https://orika-coffee.vercel.app/design-system/`
+**Run:** `python3 -m http.server 8788` na **raiz do projeto** → `http://localhost:8788/pt/design-system/`
+**Live:** `https://orika-coffee.vercel.app/pt/design-system/`
 
 > **Importante:** sirva a partir da **raiz do projeto**, não de dentro de `design-system/`. O HTML usa caminhos **absolutos** (`/design-system/…`) de propósito — assim a página funciona com ou sem barra final na URL (o `url()` do CSS continua relativo ao próprio arquivo, o que já é correto).
 
