@@ -1,5 +1,10 @@
 {
   "redirects": [
-    { "source": "/en/:path*", "destination": "/:path*", "permanent": true }
+    { "source": "/en/story",          "destination": "/story/",          "permanent": true },
+    { "source": "/en/story/",         "destination": "/story/",          "permanent": true },
+    { "source": "/en/case",           "destination": "/case/",           "permanent": true },
+    { "source": "/en/case/",          "destination": "/case/",           "permanent": true },
+    { "source": "/en/design-system",  "destination": "/design-system/",  "permanent": true },
+    { "source": "/en/design-system/", "destination": "/design-system/",  "permanent": true }
   ]
 }
